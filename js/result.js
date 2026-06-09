@@ -17,7 +17,7 @@
        const raw = sessionStorage.getItem('spk_result');
        if (!raw) { showNoData(); return; }
        R = JSON.parse(raw);
-       if (!R || !R.result || !R.ranked) { showNoData(); return; }
+       if (!R || !R.result || !R.result.ranked) { showNoData(); return; }
      } catch(e) {
        showNoData(); return;
      }
