@@ -880,7 +880,7 @@
      const allRankings = {};
      methods.forEach(m => {
        try {
-         const res = runSPK(dm, m);
+        const res = runSPK(dm, m, R.weights, R.criteriaTypes, R.lambda);
          allRankings[m] = res.ranked;
        } catch(e) {
          allRankings[m] = null;
