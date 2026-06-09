@@ -991,32 +991,3 @@
      const labels = { saw: 'SAW', topsis: 'TOPSIS', waspas: 'WASPAS', moora: 'MOORA', edas: 'EDAS' };
      return labels[method] || method.toUpperCase();
    }
-   
-   function fmt(v) {
-     if (v === null || v === undefined || isNaN(v)) return '—';
-     const n = parseFloat(v);
-     if (Math.abs(n) < 0.001 && n !== 0) return n.toExponential(3);
-     return n.toFixed(4);
-   }
-   
-   function setEl(id, text) {
-     const el = document.getElementById(id);
-     if (el) el.textContent = text;
-   }
-   
-   function cap(s) {
-     if (!s) return '';
-     return s.charAt(0).toUpperCase() + s.slice(1);
-   }
-   
-   function escHtml(str) {
-     return String(str)
-       .replace(/&/g, '&amp;')
-       .replace(/</g, '&lt;')
-       .replace(/>/g, '&gt;')
-       .replace(/"/g, '&quot;');
-   }
-   
-   function showToast(msg) {
-     if (window.Toast) window.Toast.show(msg);
-   }

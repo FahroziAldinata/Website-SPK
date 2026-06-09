@@ -886,35 +886,7 @@
      }
    }
    
-   /* ──────────────────────────────────────────
-      UTILITIES
-   ────────────────────────────────────────── */
-   function setEl(id, text) {
-     const el = document.getElementById(id);
-     if (el) el.textContent = text;
-   }
-   
-   function escHtml(str) {
-     return String(str)
-       .replace(/&/g, '&amp;')
-       .replace(/</g, '&lt;')
-       .replace(/>/g, '&gt;')
-       .replace(/"/g, '&quot;');
-   }
-   
-   function cap(s) {
-     return s.charAt(0).toUpperCase() + s.slice(1);
-   }
-   
-   function delay(ms) {
-     return new Promise(resolve => setTimeout(resolve, ms));
-   }
-   
-   function showToast(message) {
-     if (window.Toast) window.Toast.show(message);
-     else console.log('[Toast]', message);
-   }
-   
+
    /* ──────────────────────────────────────────
       INIT
    ────────────────────────────────────────── */
