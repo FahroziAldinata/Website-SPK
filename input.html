@@ -665,7 +665,35 @@
   </div>
 
   <!-- ========== SCRIPTS ========== -->
+  <!--
+    URUTAN PENTING — setiap file bergantung pada yang di atasnya:
+
+    1. app.js            → global utilities (Toast, Modal, theme, nav)
+    2. table-renderer.js → renderPreviewTable, buildManualInputTable
+    3. file-handler.js   → handleFile, parseCSV, parseExcel
+    4. weighting-entropy.js → calcEntropyWeights, normalizeWeights
+    5. weighting-critic.js  → calcCriticWeights (butuh normalizeWeights)
+    6. weight-input.js      → buildWeightSliders, updateWeightTotalBar, isWeightValid
+    7. spk-saw.js        → calcSAW, buildRanking
+    8. spk-topsis.js     → calcTOPSIS (butuh buildRanking)
+    9. spk-waspas.js     → calcWASPAS (butuh buildRanking)
+   10. spk-moora.js      → calcMOORA (butuh buildRanking)
+   11. spk-edas.js       → calcEDAS (butuh buildRanking)
+   12. calculation-engine.js → buildDecisionMatrix, runSPK
+   13. input.js          → UI controller (butuh semua di atas)
+  -->
   <script src="js/app.js"></script>
+  <script src="js/modules/table-renderer.js"></script>
+  <script src="js/modules/file-handler.js"></script>
+  <script src="js/modules/weighting-entropy.js"></script>
+  <script src="js/modules/weighting-critic.js"></script>
+  <script src="js/modules/weight-input.js"></script>
+  <script src="js/core/spk-saw.js"></script>
+  <script src="js/core/spk-topsis.js"></script>
+  <script src="js/core/spk-waspas.js"></script>
+  <script src="js/core/spk-moora.js"></script>
+  <script src="js/core/spk-edas.js"></script>
+  <script src="js/core/calculation-engine.js"></script>
   <script src="js/input.js"></script>
 
 </body>

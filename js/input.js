@@ -622,6 +622,7 @@
          State.lambda       = v;
          lambdaSlider.value = v;
        });
+       checkStep3Valid();
      }
    }
    
@@ -695,6 +696,7 @@
        'weightTotalFill', 'weightTotalLabel', 'weightTotalStatus',
        State.selectedCols, State.weights
      );
+     checkStep3Valid();
    }
    
    async function runAutoWeights(method) {
